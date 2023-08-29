@@ -135,7 +135,7 @@ class SAR(Metrics):
         self.acceleration_factor_increment = acceleration_factor_increment
         self.acceleration_factor_maximum = acceleration_factor_maximum
 
-    def calculate_parabolic_sar(self):
+    def calc(self):
         sar_values = None
         extreme_point = self.data.values[0]
         acceleration_factor = self.acceleration_factor_initial
