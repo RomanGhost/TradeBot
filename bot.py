@@ -26,6 +26,12 @@ class Bot:
         """
         # покупка
         res = 0
+
+        sar_bin = 0
+        if sar > price:
+            sar_bin = 1
+        elif sar < price:
+            sar_bin = -1
         # если предыдущее значение меньше(идет вверх), значение сейчас меньше 30
         if rsi[0] < rsi[1] and rsi[1] < 30:
             res += self.percent[0]
@@ -38,11 +44,11 @@ class Bot:
             res += self.percent[1]
 
         # быстрое значение пересекает медленное идя вверх
-        if macd < -0.07:
+        if macd < -0.068:
             res += self.percent[2]
 
         # если точка ниже цены
-        if sar == -1:
+        if sar_bin == -1:
             res += self.percent[3]
 
         if res >= self.barier_buy:
@@ -61,11 +67,11 @@ class Bot:
             res += self.percent[1]
 
         # быстрое значение пересекает медленное идя вниз
-        if macd > 0.03:
+        if macd > 0.026:
             res += self.percent[2]
 
         # если точка выше цены
-        if sar == 1:
+        if sar_bin == 1:
             res += self.percent[3]
 
         if res >= self.barier_sell:

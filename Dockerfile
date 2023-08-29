@@ -12,7 +12,7 @@ WORKDIR /app
 
 COPY --from=builder /usr/local/lib/python3.10/site-packages /usr/local/lib/python3.10/site-packages
 
-COPY main.py specs.py metrics.py bot.py .
+COPY main.py spech.py metrics.py bot.py .
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
