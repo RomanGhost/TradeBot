@@ -1,6 +1,7 @@
 import numpy as np
 import logging
 
+#logging.basicConfig(level=logging.INFO, filename='app_metrics.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
 
 class Data:
     def __init__(self, period):

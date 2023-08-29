@@ -49,6 +49,7 @@ def main(run=True):
         rsi = metrics_rsi.calc()
         macd = metrics_macd.calc()
         sar = metrics_sar.calc()
+        print(so, rsi, macd, sar)
 
         predict_res = eth_bot.predict(rsi, so, macd, price, sar)
         print(eth_bot.balance)
