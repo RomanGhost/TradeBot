@@ -60,4 +60,4 @@ except KeyboardInterrupt:
     logging.error('KeyboardInterrupt; Code is stop. Look why!')
     print(eth_bot.balance)
 except Exception as e:
-    logging.error(f'Something error; {e}')
+    logging.error(f'Something error; {e}, {data.values}')
