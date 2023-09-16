@@ -35,7 +35,11 @@ def main(run=True):
         time.sleep(61)
         agg_trades = list(client.aggregate_trade_iter(symbol='ETHUSDT', start_str='2 minutes ago UTC'))
 
-        price = float(agg_trades[-1]['p'])
+        try:
+            price = float(agg_trades[-1]['p'])
+        except IndexError:
+            continue
+
         print(f'Price:{price}')
         res = data.addValue(price)
         if res != 1:
