@@ -31,7 +31,7 @@ class Metrics:
 
 
 class RSI(Metrics):
-    def __init__(self, data: Data, period=14):
+    def __init__(self, data: Data, period=15):
         super().__init__(data, period)
 
     def calc(self):
@@ -81,7 +81,7 @@ class RSI(Metrics):
 
 
 class SO(Metrics):
-    def __init__(self, data: Data, k_period=14, d_period=3):
+    def __init__(self, data: Data, k_period=15, d_period=3):
         super().__init__(data, k_period)
         self.d_period = d_period
     def calc(self, ):
@@ -110,7 +110,7 @@ class SO(Metrics):
 
 
 class MACD(Metrics):
-    def __init__(self, data: Data, short_period=16, long_period=26):
+    def __init__(self, data: Data, short_period=12, long_period=28):
         if short_period > long_period:
             raise ValueError("fast must to less that slow")
 

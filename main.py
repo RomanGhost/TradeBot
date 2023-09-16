@@ -7,19 +7,15 @@ import logging
 
 logging.basicConfig(level=logging.INFO, filename='app.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
 
-max_period = 28
+max_period = 30
 
 data = metrics.Data(max_period)
-metric_so = metrics.SO(data, 14)
-metrics_rsi = metrics.RSI(data, 14)
-metrics_macd = metrics.MACD(data, 12, 26)
+metric_so = metrics.SO(data, 15, 3)
+metrics_rsi = metrics.RSI(data, 15)
+metrics_macd = metrics.MACD(data, 12, 28)
 metrics_sar = metrics.SAR(data, 0.02, 0.02, 0.2)
 
-eth_bot = Bot(percent=[3, 4, 6, 5], barier_buy=11, barier_sell=6)
-# btc_bot = Bot()
-# ltc_bot = Bot()
-# trx_bot = Bot()
-# xrp_bot = Bot()
+eth_bot = Bot(percent=[55, 60, 40, 35], barier_buy=95, barier_sell=50)
 
 client = Client(spech.api_key, spech.security_key, testnet=True)
 
